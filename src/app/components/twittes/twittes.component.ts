@@ -1,10 +1,11 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
+import { TweetCardComponent } from '../tweet-card/tweet-card.component';
 
 @Component({
 	selector: 'app-twittes',
 	standalone: true,
-	imports: [CommonModule],
+	imports: [CommonModule, TweetCardComponent],
 	templateUrl: './twittes.component.html',
 	styleUrl: './twittes.component.css'
 })

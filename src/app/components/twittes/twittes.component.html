@@ -1,9 +1,7 @@
 <div *ngIf="this.isConnected">
 	<h1>Voici les tweet du moment</h1>
 	<div *ngFor="let tweet of this.tweetList">
-		<h2>{{tweet.id}}</h2>
-		<p>{{tweet.content}}</p>
-		<p>{{tweet.username}}</p>
+		<app-tweet-card [tweet]="tweet"></app-tweet-card>
 	</div>
 </div>
 <div *ngIf="!this.isConnected">
