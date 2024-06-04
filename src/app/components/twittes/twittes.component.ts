@@ -1,7 +1,8 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { TweetCardComponent } from '../tweet-card/tweet-card.component';
 import { CurrentComponent } from '../current/current.component';
+import { Router } from '@angular/router';
 
 @Component({
 	selector: 'app-twittes',
@@ -10,14 +11,26 @@ import { CurrentComponent } from '../current/current.component';
 	templateUrl: './twittes.component.html',
 	styleUrl: './twittes.component.css'
 })
-export class TwittesComponent {
+export class TwittesComponent implements OnInit {
 
-	constructor() { }
+
+	ngOnInit(): void {
+		if (!this.isConnected) {
+			this.router.navigate(['/connexion']);
+		}
+	}
+
+	// injection de service
+	constructor(public router: Router) { }
 
 	isConnected = true;
 
 	currentTweet: any;
 
+
+	goToConnexion() {
+		this.router.navigate(['/connexion']);
+	}
 
 	tweetList = [
 		{

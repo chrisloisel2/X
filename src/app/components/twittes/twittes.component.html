@@ -6,5 +6,6 @@
 </div>
 <div *ngIf="!this.isConnected">
 	<h1>Vous devez être connecté pour voir les tweets</h1>
+	<button (click)="this.goToConnexion()">Se connecter</button>
 </div>
 <app-current [currentTweet]="this.currentTweet"></app-current>

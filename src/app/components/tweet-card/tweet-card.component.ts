@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
 	selector: 'app-tweet-card',
@@ -9,6 +10,9 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 })
 export class TweetCardComponent {
 
+
+	constructor(public router: Router) { }
+
 	@Input()
 	tweet: any;
 
@@ -16,9 +20,9 @@ export class TweetCardComponent {
 	ring = new EventEmitter<any>();
 
 
-	constructor() { }
 
 	ft_output(tweet: any) {
-		this.ring.emit(tweet);
+		this.router.navigate(['/popo', tweet.id]);
+		// this.ring.emit(tweet);
 	}
 }
