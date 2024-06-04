@@ -1,11 +1,12 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { TweetCardComponent } from '../tweet-card/tweet-card.component';
+import { CurrentComponent } from '../current/current.component';
 
 @Component({
 	selector: 'app-twittes',
 	standalone: true,
-	imports: [CommonModule, TweetCardComponent],
+	imports: [CommonModule, TweetCardComponent, CurrentComponent],
 	templateUrl: './twittes.component.html',
 	styleUrl: './twittes.component.css'
 })
@@ -14,6 +15,8 @@ export class TwittesComponent {
 	constructor() { }
 
 	isConnected = true;
+
+	currentTweet: any;
 
 
 	tweetList = [
@@ -52,7 +55,8 @@ export class TwittesComponent {
 		},
 	];
 
-	afficherElement(id: Number) {
-		console.log('Element clické : ' + id);
+	afficherElement(tweet: any) {
+		console.log(tweet);
+		this.currentTweet = tweet;
 	}
 }

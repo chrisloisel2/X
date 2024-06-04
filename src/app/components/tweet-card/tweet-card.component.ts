@@ -13,12 +13,12 @@ export class TweetCardComponent {
 	tweet: any;
 
 	@Output()
-	ring = new EventEmitter<Number>();
+	ring = new EventEmitter<any>();
 
 
 	constructor() { }
 
-	ft_output(nb: Number) {
-		this.ring.emit(nb);
+	ft_output(tweet: any) {
+		this.ring.emit(tweet);
 	}
 }
