@@ -1,7 +1,7 @@
 <div *ngIf="this.isConnected">
 	<h1>Voici les tweet du moment</h1>
-	<div *ngFor="let tweet of this.tweetList">
-		<app-tweet-card [tweet]="tweet"></app-tweet-card>
+	<div *ngFor="let tweet of this.tweetList1">
+		<app-tweet-card [tweet]="tweet" (ring)="afficherElement($event)"></app-tweet-card>
 	</div>
 </div>
 <div *ngIf="!this.isConnected">
