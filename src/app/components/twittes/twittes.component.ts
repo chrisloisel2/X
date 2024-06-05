@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { TweetCardComponent } from '../tweet-card/tweet-card.component';
 import { CurrentComponent } from '../current/current.component';
 import { Router } from '@angular/router';
+import { AuthService } from '../../Services/auth.service';
 
 @Component({
 	selector: 'app-twittes',
@@ -11,19 +12,9 @@ import { Router } from '@angular/router';
 	templateUrl: './twittes.component.html',
 	styleUrl: './twittes.component.css'
 })
-export class TwittesComponent implements OnInit {
+export class TwittesComponent {
 
-
-	ngOnInit(): void {
-		if (!this.isConnected) {
-			this.router.navigate(['/connexion']);
-		}
-	}
-
-	// injection de service
-	constructor(public router: Router) { }
-
-	isConnected = true;
+	constructor(public router: Router, public auth: AuthService) { }
 
 	currentTweet: any;
 
@@ -32,23 +23,6 @@ export class TwittesComponent implements OnInit {
 		this.router.navigate(['/connexion']);
 	}
 
-	tweetList = [
-		{
-			id: 1,
-			username: 'User1',
-			content: 'Content1',
-		},
-		{
-			id: 2,
-			username: 'User2',
-			content: 'Content2',
-		},
-		{
-			id: 3,
-			username: 'User3',
-			content: 'Content3',
-		},
-	];
 
 	tweetList1 = [
 		{

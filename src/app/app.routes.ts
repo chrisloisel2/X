@@ -4,12 +4,13 @@ import { InscriptionComponent } from './components/inscription/inscription.compo
 import { ConnexionComponent } from './components/connexion/connexion.component';
 import { TwittesComponent } from './components/twittes/twittes.component';
 import { CurrentComponent } from './components/current/current.component';
+import { authGuard } from './guards/auth.guard';
 
 export const routes: Routes = [
 	{ path: '', redirectTo: 'home', pathMatch: 'full' },
 	{ path: 'home', component: HomeComponent },
 	{ path: 'insciption', component: InscriptionComponent },
 	{ path: 'connexion', component: ConnexionComponent },
-	{ path: 'tweet', component: TwittesComponent },
+	{ path: 'tweet', component: TwittesComponent, canActivate: [authGuard] },
 	{ path: 'popo/:id', component: CurrentComponent }
 ];
