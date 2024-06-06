@@ -24,23 +24,7 @@ export class TwittesComponent {
 	}
 
 
-	tweetList1 = [
-		{
-			id: 1,
-			username: 'User1',
-			content: 'Content1',
-		},
-		{
-			id: 2,
-			username: 'User2',
-			content: 'Content2',
-		},
-		{
-			id: 3,
-			username: 'User3',
-			content: 'Content3',
-		},
-	];
+
 
 	afficherElement(tweet: any) {
 		console.log(tweet);
