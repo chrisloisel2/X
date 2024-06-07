@@ -10,9 +10,14 @@ import { HttpClient } from '@angular/common/http';
 	styleUrl: './inscription.component.css'
 })
 export class InscriptionComponent {
+
+	img = '';
+	titre = '';
 	constructor(public auth: AuthService, public http: HttpClient) {
-		this.http.get("https://api.chucknorris.io/jokes/random").subscribe((data) => {
+		this.http.get("https://backendchristopherloisel.azurewebsites.net/api/backGet?").subscribe((data: any) => {
 			console.log(data);
+			this.img = data.contenu;
+			this.titre = data.titre;
 		})
 	}
 
